@@ -23,6 +23,14 @@ compile_server:
 compile_client:
 	gcc -Wall -o obj/client.o src/client.c -Iinclude
 
+compile_select:
+	gcc -Wall -o obj/sel.o src/select_demo.c -Iinclude
+
+compile_poll:
+	gcc -Wall -o obj/poll.o src/poll_demo.c -Iinclude
+
+compile_all: compile_server compile_client compile_select compile_poll
+
 trace: 
 	ktrace trace -S -c ./$(TARGET)
 
